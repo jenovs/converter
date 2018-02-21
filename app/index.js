@@ -4,6 +4,7 @@ import Home from './screens/Home';
 
 stylesheet.build({
   $primaryBlue: '#4f6d7a',
+  $white: '#fff',
 });
 
 export default () => <Home />;
