@@ -4,17 +4,20 @@ import stylesheet from 'react-native-extended-stylesheet';
 const imageWidth = Dimensions.get('window').width / 2;
 
 export default stylesheet.create({
+  $largeContainerSize: imageWidth,
+  $largeImageSize: imageWidth / 2,
+  $smallContainerSize: imageWidth / 2,
+  $smallImageSize: imageWidth / 4,
+
   backgroundImage: {
     alignItems: 'center',
-    height: imageWidth,
     justifyContent: 'center',
-    width: imageWidth,
   },
   container: {
     alignItems: 'center',
   },
   image: {
-    width: imageWidth / 2,
+    width: '$largeImageSize',
   },
   text: {
     fontSize: 28,
