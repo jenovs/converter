@@ -4,6 +4,7 @@ import { View, StatusBar } from 'react-native';
 import { ClearButton } from '../components/Buttons';
 import { Container } from '../components/Container';
 import { InputWithButton } from '../components/TextInput';
+import { LastConverted } from '../components/Text';
 import { Logo } from '../components/Logo';
 
 const TEMP_BASE_CURRENCY = 'BTC';
@@ -50,6 +51,12 @@ class Home extends React.Component {
             defaultValue={TEMP_QUOTE_PRICE}
           />
         </View>
+        <LastConverted
+          base={TEMP_BASE_CURRENCY}
+          quote={TEMP_QUOTE_CURRENCY}
+          conversionRate={TEMP_CONVERSION_RATE}
+          date={TEMP_CONVERSION_DATE}
+        />
         <ClearButton
           text="Reverse currencies"
           onPress={this.handleSwapCurrency}
