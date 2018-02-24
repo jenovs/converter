@@ -3,6 +3,7 @@ import { View, StatusBar } from 'react-native';
 
 import { ClearButton } from '../components/Buttons';
 import { Container } from '../components/Container';
+import { Header } from '../components/Header';
 import { InputWithButton } from '../components/TextInput';
 import { LastConverted } from '../components/Text';
 import { Logo } from '../components/Logo';
@@ -17,6 +18,10 @@ const TEMP_CONVERSION_DATE = new Date();
 class Home extends React.Component {
   handlePressBaseCurrency = () => {
     console.log('press base');
+  };
+
+  handlePressOptions = () => {
+    console.log('press options');
   };
 
   handlePressQuoteCurrency = () => {
@@ -35,6 +40,7 @@ class Home extends React.Component {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
+        <Header onPress={this.handlePressOptions} />
         <View>
           <Logo />
           <InputWithButton
