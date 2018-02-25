@@ -8,6 +8,7 @@ import styles from './styles';
 
 const propTypes = {
   customIcon: PropTypes.element,
+  iconBackground: PropTypes.string,
   onPress: PropTypes.func.isRequired,
   selected: PropTypes.bool,
   text: PropTypes.string.isRequired,
@@ -18,6 +19,7 @@ const propTypes = {
 const ListItem = ({
   checkmark = true,
   customIcon = null,
+  iconBackground,
   onPress,
   selected = false,
   text,
@@ -26,7 +28,15 @@ const ListItem = ({
   <TouchableHighlight onPress={onPress} underlayColor={styles.$underlayColor}>
     <View style={styles.row}>
       <Text style={styles.text}>{text}</Text>
-      {selected ? <Icon checkmark={checkmark} visible={visible} /> : <Icon />}
+      {selected ? (
+        <Icon
+          checkmark={checkmark}
+          visible={visible}
+          iconBackground={iconBackground}
+        />
+      ) : (
+        <Icon />
+      )}
       {customIcon}
     </View>
   </TouchableHighlight>

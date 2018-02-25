@@ -5,14 +5,19 @@ import { View, Image } from 'react-native';
 import styles from './styles';
 
 const propTypes = {
-  checkmark: PropTypes.bool.isRequired,
-  visible: PropTypes.bool.isRequired,
+  checkmark: PropTypes.bool,
+  iconBackground: PropTypes.string,
+  visible: PropTypes.bool,
 };
 
-const Icon = ({ checkmark, visible }) => {
+const Icon = ({ checkmark, iconBackground, visible }) => {
   const iconStyles = [styles.icon];
   if (visible) {
     iconStyles.push(styles.iconVisible);
+  }
+
+  if (iconBackground) {
+    iconStyles.push({ backgroundColor: iconBackground });
   }
 
   return (
