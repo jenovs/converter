@@ -1,7 +1,8 @@
 import React from 'react';
 import stylesheet from 'react-native-extended-stylesheet';
 // import Home from './screens/Home';
-import CurrencyList from './screens/CurrencyList';
+// import CurrencyList from './screens/CurrencyList';
+import Options from './screens/Options';
 
 stylesheet.build({
   $border: '#e2e2e2',
@@ -13,4 +14,4 @@ stylesheet.build({
 });
 
 // export default () => <Home />;
-export default () => <CurrencyList />;
+export default () => <Options />;
