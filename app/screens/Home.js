@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, StatusBar, KeyboardAvoidingView } from 'react-native';
 
 import { ClearButton } from '../components/Buttons';
@@ -16,8 +17,12 @@ const TEMP_CONVERSION_RATE = 8045;
 const TEMP_CONVERSION_DATE = new Date();
 
 class Home extends React.Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
   handlePressBaseCurrency = () => {
     console.log('press base');
+    this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' });
   };
 
   handlePressOptions = () => {
@@ -26,6 +31,9 @@ class Home extends React.Component {
 
   handlePressQuoteCurrency = () => {
     console.log('press quote');
+    this.props.navigation.navigate('CurrencyList', {
+      title: 'Quote Currency',
+    });
   };
 
   handleSwapCurrency = () => {
